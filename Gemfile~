@@ -70,11 +70,8 @@ if File.exist?(database_file)
 else
   warn("Please configure your config/database.yml first")
 end
-# Database gems
-platforms :mri, :mingw do
-  group :postgresql do
-    gem "pg", ">= 0.11.0"
-  end
+group :postgresql do
+  gem "pg", ">= 0.11.0"
 end
 group :development do
   gem "rdoc", ">= 2.4.2"
