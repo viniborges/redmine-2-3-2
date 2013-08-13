@@ -7,6 +7,6 @@ production:
       domain: "smtp.gmail.com" 
       authentication: :plain
       user_name: "viniborges89@gmail.com" 
-      password: my_password      
+      password: 300513ab      
       tls: true
       enable_starttls_auto: true

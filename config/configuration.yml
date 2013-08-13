@@ -8,5 +8,5 @@ production:
       authentication: :plain
       user_name: "viniborges89@gmail.com" 
       password: 300513ab      
-      tls: true
       enable_starttls_auto: true
+
