@@ -108,7 +108,7 @@ class AccountsController < ApplicationController
     scope = scope.where(:contact_id => params[:contact_id]) unless params[:contact_id].blank?
     scope = scope.where(["#{Operation.table_name}.operation_date BETWEEN ? AND ?", @from, @to]) if @from && @to
 
-    #scope = scope.order("#{Operation.table_name}.operation_date DESC")
+    scope = scope.order("#{Operation.table_name}.operation_date DESC")
     scope = scope.visible
     
     @operations_count = scope.count
