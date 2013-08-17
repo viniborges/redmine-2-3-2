@@ -1,5 +1,45 @@
-= Redmine
+= Sobre o Redmine
 
-Redmine is a flexible project management web application written using Ruby on Rails framework.
+Redmine é um flexível  gerenciador de projetos web desenvolvido no framework Ruby on Rails.
 
-More details can be found in the doc directory or on the official website http://www.redmine.org
+Mais detalhes podem ser encontrados no site oficial http://www.redmine.org
+
+= Sobre este repositório
+
+Ambiente pronto e configurado para realizar o deploy do Redmine no Heroku.
+
+*Environment:
+  Redmine version                2.3.2.devel
+  Ruby version                   2.0.0-p247 (2013-06-27) [x86_64-linux]
+  Rails version                  3.2.13
+  Environment                    production
+  Database adapter               PostgreSQL
+
+*Redmine plugins:
+  redmine_contacts               3.2.4-light
+  redmine_finance                1.0.4-light
+  redmine_issue_checklist        2.0.5
+
+= Características
+
+* Tema: A1
+* Plugins: Contacts, Finance, Issue Checklist
+* E-mail Sender: Gmail (não precisa usar sendgrid)
+
+= Instalação
+ * Faça o deploy na sua conta do heroku normalmente (git push heroku master)
+ * Depois digite no terminal:
+    heroku run rake db:migrate
+    heroku run rake redmine:load_default_data
+    heroku run rake redmine:plugins NAME=redmine_contacts RAILS_ENV=production
+    heroku run rake redmine:plugins NAME=redmine_finance RAILS_ENV=production
+    heroku run rake redmine:plugins NAME=redmine_issue_checklist RAILS_ENV=production
+ * Pronto, tente logar como admin/admin e comece a configurar seu gerenciador de projetos on-line
+ (sem mais desculpas para atrasar cronogramas ;0 )
+
+= Referências
+http://redminecrm.com
+
+http://railsguides.net/2012/04/28/how-to-deploy-redmine-to-heroku
+
+http://blog.softnauts.com/redmine-heroku-gmail
